@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const httpStatusText = require('./utils/httpStatusText');
 const cors = require('cors')
 const Role = require("./middleware/role-auth");
-const expressJwt = require('express-jwt');
 require('dotenv').config()
 
 const port = process.env.PORT || 8000
