@@ -57,7 +57,7 @@ module.exports.login = async (req, res) => {
                 { expiresIn: '1d' }
             );
             
-            res.status(200).send({ user: user.role ,user: user.email, token: token });
+            res.status(200).send({ email: user.email, token: token, role: user.role });
         } else {
             res.status(400).send('Incorrect password');
         }
