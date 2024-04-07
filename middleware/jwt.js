@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const func_spec = function expressJwt() {
     const secret = process.env.secret;
-    return expressJwt({ "secret", algorithms: ['HS256'], isRevoked: isRevoked })
+    return expressJwt({ secret, algorithms: ['HS256'], isRevoked: isRevoked })
     .unless({
         path: [
             '/api/auth/login',
