@@ -7,6 +7,11 @@ module.exports.register = async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
+        if (!hashedPassword) {
+            console.error('Password hashing failed');
+            return res.status(500).send('Error hashing password');
+        }
+
         let user = new User({
             name: req.body.name,
             email: req.body.email,
@@ -29,6 +34,7 @@ module.exports.register = async (req, res) => {
         res.status(500).send('An error occurred during user registration');
     }
 };
+
 
 module.exports.login = async (req, res) => {
     try {
