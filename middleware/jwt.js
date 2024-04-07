@@ -6,6 +6,7 @@ const func_spec = function expressJwt() {
     .unless({
         path: [
             '/api/auth/login',
+            '/api/auth/register',
             
         ]
     });
