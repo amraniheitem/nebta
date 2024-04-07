@@ -53,7 +53,7 @@ module.exports.login = async (req, res) => {
                     userId: user.id,
                     isAdmin: user.isAdmin
                 },
-                secret,
+                "secret",
                 { expiresIn: '1d' }
             );
             
